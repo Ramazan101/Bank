@@ -69,8 +69,7 @@ async def predict(bank: BankSchema):
     scaled_data = scaler.transform([feature])
     pred = model.predict(scaled_data)[0]
     result = 'Approved' if pred == 1 else 'Rejected'
-    return {'prediction': int(pred),
-            'result': result}
+    return {'prediction': result}
 
 if __name__ == '__main__':
     uvicorn.run(setup_app,host= '127.0.0.1', port=8000)
