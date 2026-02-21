@@ -18,7 +18,7 @@ class Diabetes(BaseModel):
     DiabetesPedigreeFunction: float
     Age: int
 
-@app_router.post('/predict')
+@app_router.post('/predict/')
 async def predict(diabetes: Diabetes):
     data = diabetes.dict()
 
